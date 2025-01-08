@@ -7,7 +7,6 @@ import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
-// Add this translation helper
 const __ = (key, replacements = {}) => {
     let translation = window._translations[key] || key;
     
@@ -29,7 +28,6 @@ createInertiaApp({
             .use(plugin)
             .use(ZiggyVue);
 
-        // Make __ globally available
         app.config.globalProperties.__ = __;
 
         return app.mount(el);
